@@ -2,55 +2,157 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
   <style>
-    /* Reset & basics */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* ===== Animated Background ===== */
     body {
-      font-family: 'Arial', sans-serif;
-      background: #f5f5f5;
-      color: #333;
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      background: linear-gradient(
+        -45deg,
+        #949887,
+        #a1a58f,
+        #8e927f,
+        #949887
+      );
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* ===== Card ===== */
+    .container {
+      background: #ffffff;
+      padding: 50px 30px;
+      max-width: 420px;
+      width: 90%;
+      border-radius: 14px;
       text-align: center;
-      padding: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1.2s ease;
     }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== Logo ===== */
+    .logo img {
+      max-width: 140px;
+      margin-bottom: 30px;
+    }
+
     h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+      margin: 0;
+      font-size: 32px;
+      color: #414141;
+      letter-spacing: 1px;
     }
+
     p {
-      font-size: 1.2rem;
-      color: #666;
-      margin-bottom: 2rem;
+      margin: 15px 0 35px;
+      font-size: 15px;
+      color: #414141;
+      opacity: 0.8;
     }
-    .email-notify input {
-      padding: 10px;
-      width: 250px;
-      max-width: 80%;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-right: 10px;
-      font-size: 1rem;
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background-color: #949887;
+      margin: 25px auto;
+      border-radius: 3px;
     }
-    .email-notify button {
-      padding: 10px 20px;
-      font-size: 1rem;
-      background: #0070f3;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
+
+    /* ===== Contact Icons ===== */
+    .contact {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 25px;
     }
-    .email-notify button:hover {
-      background: #005ac1;
+
+    .contact a {
+      color: #414141;
+      font-size: 22px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .contact a:hover {
+      color: #949887;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #414141;
+      opacity: 0.6;
     }
   </style>
 </head>
+
 <body>
-  <div>
-    <h1>Hi, I’m Khadija</h1>
+  <div class="container">
+
+    <!-- LOGO -->
+    <div class="logo">
+      <img src="mylogo.png" alt="bydoja">
+    </div>
+
+    <h1>Coming Soon</h1>
+
+    <div class="divider"></div>
+
+    <p>
+      We are working on something beautiful.<br>
+      Our website will be live very soon.
+    </p>
+
+    <!-- CONTACT -->
+    <div class="contact">
+      <a href="https://wa.me/212600000000" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:contact@yourdomain.com">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+    <footer>
+      © 2026 — All rights reserved
+    </footer>
+
+  </div>
+</body>
+</html>
